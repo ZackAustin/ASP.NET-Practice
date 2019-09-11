@@ -13,5 +13,10 @@ namespace FirstWebsite
         {
             HelloWorldLabel.Text = "Hello, World";
         }
+
+        protected void GreetButton_Click(object sender, EventArgs e)
+        {
+            HelloWorldLabel.Text = "Hello, " + TextInput.Text;
+        }
     }
 }

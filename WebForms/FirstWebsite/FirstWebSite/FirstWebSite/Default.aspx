@@ -6,10 +6,13 @@
     <title>Untitled Page</title>
 </head>
 <body>
-    <form id="form2" runat="server">
-    <div>
-    <asp:Label runat="server" id="HelloWorldLabel"></asp:Label>
-    </div>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Label runat="server" id="HelloWorldLabel"></asp:Label>
+            <br /><br />
+            <asp:TextBox runat="server" ID="TextInput" />
+            <asp:Button runat="server" ID="GreetButton" Text="Say Hello!" OnClick="GreetButton_Click" />
+        </div>
     </form>
 </body>
 </html>
