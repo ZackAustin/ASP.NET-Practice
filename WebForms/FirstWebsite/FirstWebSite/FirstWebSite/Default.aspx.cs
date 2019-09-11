@@ -12,6 +12,10 @@ namespace FirstWebsite
         protected void Page_Load(object sender, EventArgs e)
         {
             HelloWorldLabel.Text = "Hello, World";
+
+            MyUserInfoBoxControl.UserName = "Jane Doe";
+            MyUserInfoBoxControl.UserAge = 33;
+            MyUserInfoBoxControl.UserCountry = "Germany";
         }
 
         protected void GreetButton_Click(object sender, EventArgs e)
