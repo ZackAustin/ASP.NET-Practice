@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace FirstWebsite
+namespace FirstWebSite
 {
     public partial class Default : System.Web.UI.Page
     {
@@ -13,9 +13,11 @@ namespace FirstWebsite
         {
             HelloWorldLabel.Text = "Hello, World";
 
-            MyUserInfoBoxControl.UserName = "Jane Doe";
-            MyUserInfoBoxControl.UserAge = 33;
-            MyUserInfoBoxControl.UserCountry = "Germany";
+            UserInfoBoxControl userInfoBoxControl = (UserInfoBoxControl)LoadControl("~/UserInfoBoxControl.ascx");
+            userInfoBoxControl.UserName = "John Doe";
+            userInfoBoxControl.UserAge = 78;
+            userInfoBoxControl.UserCountry = "Spain";
+            phUserInfoBox.Controls.Add(userInfoBoxControl);
         }
 
         protected void GreetButton_Click(object sender, EventArgs e)

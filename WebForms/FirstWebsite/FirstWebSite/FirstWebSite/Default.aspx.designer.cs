@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FirstWebsite {
+namespace FirstWebSite {
     
     
     public partial class Default {
@@ -58,12 +58,12 @@ namespace FirstWebsite {
         protected global::System.Web.UI.WebControls.DropDownList GreetList;
         
         /// <summary>
-        /// MyUserInfoBoxControl control.
+        /// phUserInfoBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::FirstWebSite.UserInfoBoxControl MyUserInfoBoxControl;
+        protected global::System.Web.UI.WebControls.PlaceHolder phUserInfoBox;
     }
 }

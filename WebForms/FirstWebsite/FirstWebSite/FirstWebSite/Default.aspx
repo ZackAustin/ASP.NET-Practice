@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="~/Default.aspx.cs" Inherits="FirstWebsite.Default" %>
-<%@ Register TagPrefix="My" TagName="UserInfoBoxControl" Src="~/UserInfoBoxControl.ascx" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="~/Default.aspx.cs" Inherits="FirstWebSite.Default" %>
+<%@ Reference Control="~/UserInfoBoxControl.ascx" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
@@ -19,8 +19,8 @@
                 <asp:ListItem Value="Universe">Universe</asp:ListItem>
             </asp:DropDownList>
             <br /><br />
-            <My:UserInfoBoxControl runat="server" ID="MyUserInfoBoxControl"
-                UserName="John Doe" UserAge="45" UserCountry="Australia" />
+
+            <asp:PlaceHolder runat="server" ID="phUserInfoBox" />
         </div>
     </form>
 </body>
