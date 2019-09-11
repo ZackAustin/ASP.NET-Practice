@@ -12,6 +12,11 @@
             <br /><br />
             <asp:TextBox runat="server" ID="TextInput" />
             <asp:Button runat="server" ID="GreetButton" Text="Say Hello!" OnClick="GreetButton_Click" />
+            <asp:DropDownList runat="server" ID="GreetList" AutoPostBack="true" OnSelectedIndexChanged="GreetList_SelectedIndexChanged">
+                <asp:ListItem Value="No one">No one</asp:ListItem>
+                <asp:ListItem Value="World">World</asp:ListItem>
+                <asp:ListItem Value="Universe">Universe</asp:ListItem>
+            </asp:DropDownList>
         </div>
     </form>
 </body>

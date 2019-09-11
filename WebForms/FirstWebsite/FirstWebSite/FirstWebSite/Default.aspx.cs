@@ -18,5 +18,10 @@ namespace FirstWebsite
         {
             HelloWorldLabel.Text = "Hello, " + TextInput.Text;
         }
+
+        protected void GreetList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            HelloWorldLabel.Text = "Hello, " + GreetList.SelectedValue;
+        }
     }
 }
