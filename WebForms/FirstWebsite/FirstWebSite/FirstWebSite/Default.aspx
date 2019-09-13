@@ -1,7 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="~/Default.aspx.cs" Inherits="FirstWebSite.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="~/Default.aspx.cs" 
+    Inherits="FirstWebSite.Default" %>
 <%@ Reference Control="~/UserInfoBoxControl.ascx" %>
+<%@ Register TagPrefix="My" TagName="EventUserControl"
+    Src="~/EventUserControl.ascx" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>Untitled Page</title>
@@ -21,10 +26,11 @@
             <br /><br />
 
             <asp:PlaceHolder runat="server" ID="phUserInfoBox" />
+
+            <My:EventUserControl runat="server" ID="MyEventUserControl"  
+                OnPageTitleUpdated="MyEventUserControl_PageTitleUpdated" />
         </div>
     </form>
 </body>
 </html>
-
-
 

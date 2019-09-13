@@ -122,6 +122,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="EventUserControl.ascx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -175,6 +176,13 @@
     </Compile>
     <Compile Include="UserInfoBoxControl.ascx.designer.cs">
       <DependentUpon>UserInfoBoxControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="EventUserControl.ascx.cs">
+      <DependentUpon>EventUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventUserControl.ascx.designer.cs">
+      <DependentUpon>EventUserControl.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -13,7 +13,8 @@ namespace FirstWebSite
         {
             HelloWorldLabel.Text = "Hello, World";
 
-            UserInfoBoxControl userInfoBoxControl = (UserInfoBoxControl)LoadControl("~/UserInfoBoxControl.ascx");
+            UserInfoBoxControl userInfoBoxControl = 
+                (UserInfoBoxControl)LoadControl("~/UserInfoBoxControl.ascx");
             userInfoBoxControl.UserName = "John Doe";
             userInfoBoxControl.UserAge = 78;
             userInfoBoxControl.UserCountry = "Spain";
@@ -29,5 +30,11 @@ namespace FirstWebSite
         {
             HelloWorldLabel.Text = "Hello, " + GreetList.SelectedValue;
         }
+
+        protected void MyEventUserControl_PageTitleUpdated(object sender, EventArgs e)
+        {
+            this.Title = this.MyEventUserControl.PageTitle;
+        }
     }
 }
+
