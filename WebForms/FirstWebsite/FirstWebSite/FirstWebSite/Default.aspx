@@ -29,6 +29,19 @@
 
             <My:EventUserControl runat="server" ID="MyEventUserControl"  
                 OnPageTitleUpdated="MyEventUserControl_PageTitleUpdated" />
+            <br /><br />
+        </div>
+        <div id="div2">
+            Your name: <br />
+            <asp:TextBox runat="server" ID="txtName" />
+            <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator1" 
+                ControlToValidate="txtName" 
+                ErrorMessage="Please enter your name!" 
+                EnableClientScript="false"
+                />
+            <br /><br />
+            <asp:Button runat="server" ID="btnSubmitForm" Text="Ok" 
+                OnClick="btnSubmitForm_Click"/>
         </div>
     </form>
 </body>
