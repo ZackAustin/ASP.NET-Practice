@@ -48,6 +48,14 @@ namespace FirstWebSite
                 div3.Style["background-color"] = ColorSelector.SelectedValue;
             }
             
+            if (ViewState["NameOfUser"] != null)
+            {
+                NameLabel.Text = ViewState["NameOfUser"].ToString();
+            }
+            else
+            {
+                NameLabel.Text = "Not set yet...";
+            }
         }
 
         protected void GreetButton_Click(object sender, EventArgs e)
@@ -90,6 +98,12 @@ namespace FirstWebSite
         {
             div3.Style["background-color"] = ColorSelector.SelectedValue;
             Session["BackgroundColor"] = ColorSelector.SelectedValue;
+        }
+
+        protected void SubmitForm_Click(object sender, EventArgs e)
+        {
+            ViewState["NameOfUser"] = NameField.Text;
+            NameLabel.Text = NameField.Text;
         }
     }
 }

@@ -10,7 +10,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>Sessions</title>
+    <title>ViewState</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -99,6 +99,17 @@
                     <asp:ListItem Value="Green">Green</asp:ListItem>
                     <asp:ListItem Value="Blue">Blue</asp:ListItem>
             </asp:DropDownList>
+            <br /><br />
+        </div>
+
+        <div id="div4" runat="server">
+            <asp:TextBox runat="server" ID="NameField" />
+            <asp:Button runat="server" ID="SubmitForm" OnClick="SubmitForm_Click"
+                text="Submits & sets name "/>
+            <asp:Button runat="server" ID="RefreshPage" Text="Just a postback" />
+            <br /><br />
+            Name retrieved from ViewState: <asp:Label runat="server"
+                id="NameLabel" />
         </div>
     </form>
 </body>
