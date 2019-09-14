@@ -37,11 +37,39 @@
             <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator1" 
                 ControlToValidate="txtName" 
                 ErrorMessage="Please enter your name!" 
-                EnableClientScript="false"
-                />
+                EnableClientScript="false" />
             <br /><br />
             <asp:Button runat="server" ID="btnSubmitForm" Text="Ok" 
                 OnClick="btnSubmitForm_Click"/>
+            <br />
+            <p></p>
+
+            Small number: <br />
+            <asp:TextBox runat="server" ID="txtSmallNumber" /><br /><br />
+            Big number: <br />
+            <asp:TextBox runat="server" ID="txtBigNumber" /> <br />
+            <br />
+            <asp:CompareValidator runat="server" ID="cmpNumbers"
+                controltovalidate="txtSmallNumber" ControlToCompare="txtBigNumber"
+                operator="LessThan" Type="Integer"
+                errorMessage="First number should be smaller than the second." />
+            <br /><br />
+
+            Date:<br />
+            <asp:TextBox runat="server" ID="txtDate" />
+            <asp:RangeValidator runat="server" ID="rngDate"
+                controltovalidate="txtDate" Type="Date"
+                minimumvalue="01-01-2006" MaximumValue="12-31-2006"
+                errormessage="Enter a valid date for 2006." />
+            <br /><br />
+
+            4 digit number: <br />
+            <asp:TextBox runat="server" ID="txtNumberVal" />
+            <asp:RegularExpressionValidator runat="server" ID="regNumber"
+                controltovalidate="txtNumberVal"
+                validationexpression="^[0-9]{4}$"
+                errormessage="Enter a 4 digit number." />
+            <br /><br />
         </div>
     </form>
 </body>
