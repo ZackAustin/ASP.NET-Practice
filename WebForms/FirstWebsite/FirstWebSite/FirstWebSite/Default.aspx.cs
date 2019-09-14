@@ -43,6 +43,14 @@ namespace FirstWebSite
                 btnSubmitForm.Text = "My form is valid!";
             }
         }
+
+        protected void lenCustom_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (args.Value.Length == 8)
+                args.IsValid = true;
+            else
+                args.IsValid = false;
+        }
     }
 }
 

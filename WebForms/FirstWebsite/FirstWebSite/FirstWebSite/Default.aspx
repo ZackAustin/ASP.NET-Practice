@@ -70,8 +70,16 @@
                 validationexpression="^[0-9]{4}$"
                 errormessage="Enter a 4 digit number." />
             <br /><br />
+
+            Custom text: <br />
+            <asp:TextBox runat="server" ID="txtCustom" />
+            <asp:CustomValidator runat="server" ID="lenCustom"
+                controltovalidate="txtCustom"
+                onservervalidate="lenCustom_ServerValidate" 
+                ValidateEmptyText="true"
+                errormessage="Text must be 8 characters long."  />
+            <br /><br />
         </div>
     </form>
 </body>
 </html>
-
