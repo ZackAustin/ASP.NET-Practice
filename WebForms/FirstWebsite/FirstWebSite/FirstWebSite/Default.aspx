@@ -3,7 +3,7 @@
 <%@ Reference Control="~/UserInfoBoxControl.ascx" %>
 <%@ Register TagPrefix="My" TagName="EventUserControl"
     Src="~/EventUserControl.ascx" %>
-<%@ OutputCache Duration="10" VaryByParam="p" %>
+<%@ OutputCache Duration="120" VaryByParam="None" VaryByCustom="Browser" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
