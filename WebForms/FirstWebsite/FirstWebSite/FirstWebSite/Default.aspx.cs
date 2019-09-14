@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Collections;
 
 namespace FirstWebSite
 {
@@ -13,12 +14,32 @@ namespace FirstWebSite
         {
             HelloWorldLabel.Text = "Hello, World";
 
+            ArrayList datestamps;
+
             UserInfoBoxControl userInfoBoxControl = 
                 (UserInfoBoxControl)LoadControl("~/UserInfoBoxControl.ascx");
             userInfoBoxControl.UserName = "John Doe";
             userInfoBoxControl.UserAge = 78;
             userInfoBoxControl.UserCountry = "Spain";
             phUserInfoBox.Controls.Add(userInfoBoxControl);
+
+            if (Cache["datestamps"] == null)
+            {
+                datestamps = new ArrayList();
+                datestamps.Add(DateTime.Now);
+                datestamps.Add(DateTime.Now);
+                datestamps.Add(DateTime.Now);
+
+                Cache.Add("datestamps", datestamps, null,
+                    System.Web.Caching.Cache.NoAbsoluteExpiration,
+                    new TimeSpan(0, 0, 60),
+                    System.Web.Caching.CacheItemPriority.Default, null);
+            }
+            else
+                datestamps = (ArrayList)Cache["datestamps"];
+
+            foreach (DateTime dt in datestamps)
+                Response.Write(dt.ToString() + "<br />");
         }
 
         protected void GreetButton_Click(object sender, EventArgs e)
