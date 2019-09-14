@@ -10,7 +10,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>Caching</title>
+    <title>Cookies</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -87,6 +87,18 @@
                 ValidateEmptyText="true"
                 errormessage="Text must be 8 characters long."  />
             <br /><br />
+        </div>
+        <div id="div3" runat="server">
+            <asp:DropDownList runat="server" ID="ColorSelector"
+                AutoPostBack="true" 
+                OnSelectedIndexChanged="ColorSelector_SelectedIndexChanged">
+                    <asp:ListItem Value="White" Selected="True">
+                        Select Color...
+                    </asp:ListItem>
+                    <asp:ListItem Value="Red">Red</asp:ListItem>
+                    <asp:ListItem Value="Green">Green</asp:ListItem>
+                    <asp:ListItem Value="Blue">Blue</asp:ListItem>
+            </asp:DropDownList>
         </div>
     </form>
 </body>

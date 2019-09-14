@@ -40,6 +40,12 @@ namespace FirstWebSite
 
             foreach (DateTime dt in datestamps)
                 Response.Write(dt.ToString() + "<br />");
+
+            if (Request.Cookies["BackgroundColor"] != null && !this.IsPostBack)
+            {
+                ColorSelector.SelectedValue = Request.Cookies["BackgroundColor"].Value;
+                div3.Style["background-color"] = ColorSelector.SelectedValue;
+            }
         }
 
         protected void GreetButton_Click(object sender, EventArgs e)
@@ -76,6 +82,15 @@ namespace FirstWebSite
         protected static string GetFreshDateTime(HttpContext context)
         {
             return DateTime.Now.ToString();
+        }
+
+        protected void ColorSelector_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            div3.Style["background-color"] = ColorSelector.SelectedValue;
+            HttpCookie cookie = new HttpCookie("BackgroundColor");
+            cookie.Value = ColorSelector.SelectedValue;
+            cookie.Expires = DateTime.Now.AddHours(1);
+            Response.SetCookie(cookie);
         }
     }
 }
