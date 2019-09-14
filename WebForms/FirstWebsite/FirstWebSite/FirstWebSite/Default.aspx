@@ -3,17 +3,24 @@
 <%@ Reference Control="~/UserInfoBoxControl.ascx" %>
 <%@ Register TagPrefix="My" TagName="EventUserControl"
     Src="~/EventUserControl.ascx" %>
+<%@ OutputCache Duration="10" VaryByParam="p" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>Untitled Page</title>
+    <title>Caching</title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div id="div0">
+            <%= DateTime.Now.ToString() %>
+            <a href ="?p=1">1</a><br />
+            <a href ="?p=2">2</a><br />
+            <a href ="?p=3">3</a><br />
+        </div>
+        <div id="div1">
             <asp:Label runat="server" id="HelloWorldLabel"></asp:Label>
             <br /><br />
             <asp:TextBox runat="server" ID="TextInput" />
