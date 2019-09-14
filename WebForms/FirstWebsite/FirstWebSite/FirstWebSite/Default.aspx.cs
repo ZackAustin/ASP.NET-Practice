@@ -51,6 +51,11 @@ namespace FirstWebSite
             else
                 args.IsValid = false;
         }
+
+        protected static string GetFreshDateTime(HttpContext context)
+        {
+            return DateTime.Now.ToString();
+        }
     }
 }
 
