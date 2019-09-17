@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Collections;
+using System.Net.Mail;
+using System.Net;
 
 namespace FirstWebSite
 {
@@ -104,6 +106,33 @@ namespace FirstWebSite
         {
             ViewState["NameOfUser"] = NameField.Text;
             NameLabel.Text = NameField.Text;
+        }
+
+        protected void MailButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var basicCredential =
+                    //Lookup password. Do not commit.
+                    new NetworkCredential("zack_austin@comcast.net", "");
+                var mailMessage = new MailMessage();
+                mailMessage.To.Add("zacksaustin@gmail.com");
+                mailMessage.From = new MailAddress("zack_austin@comcast.net");
+                mailMessage.Subject = "ASP.NET e-mail test";
+                mailMessage.Body = "Hello world,\n\nThis is an ASP.NET test email!";
+
+                var smtpClient = new SmtpClient("smtp.comcast.net");
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Credentials = basicCredential;
+                smtpClient.Port = 587;
+                smtpClient.Send(mailMessage);
+                Response.Write("Email Sent.");
+            }
+            catch (Exception ex)
+            {
+                Response.Write("Could not send the email - error"
+                    + ex.Message);
+            }
         }
     }
 }

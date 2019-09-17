@@ -111,6 +111,13 @@
             Name retrieved from ViewState: <asp:Label runat="server"
                 id="NameLabel" />
         </div>
+
+        <div id="div5" runat="server">
+            <br /> <br />
+            <asp:Button runat="server" ID="MailButton"
+                OnClick="MailButton_Click"
+                text="Send a test email." />
+        </div>
     </form>
 </body>
 </html>
