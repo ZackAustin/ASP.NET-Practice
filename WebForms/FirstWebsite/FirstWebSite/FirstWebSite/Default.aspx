@@ -118,6 +118,15 @@
                 OnClick="MailButton_Click"
                 text="Send a test email." />
         </div>
+
+        <div id="div6" runat="server">
+            <br />  <br />
+            <asp:FileUpload ID="FileUploadControl" runat="server" />
+            <asp:Button runat="server" ID="UploadButton" Text="Upload"
+                onclick="UploadButton_Click" />
+            <br />  <br />
+            <asp:Label runat="server" ID="StatusLabel" Text="Upload status:" />
+        </div>
     </form>
 </body>
 </html>

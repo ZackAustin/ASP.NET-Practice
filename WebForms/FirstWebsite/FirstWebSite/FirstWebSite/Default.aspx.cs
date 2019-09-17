@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Collections;
 using System.Net.Mail;
 using System.Net;
+using System.IO;
 
 namespace FirstWebSite
 {
@@ -112,6 +113,7 @@ namespace FirstWebSite
         {
             try
             {
+                /*
                 var basicCredential =
                     //Lookup password. Do not commit.
                     new NetworkCredential("zack_austin@comcast.net", "");
@@ -127,11 +129,41 @@ namespace FirstWebSite
                 smtpClient.Port = 587;
                 smtpClient.Send(mailMessage);
                 Response.Write("Email Sent.");
+                */
             }
             catch (Exception ex)
             {
                 Response.Write("Could not send the email - error"
                     + ex.Message);
+            }
+        }
+
+        protected void UploadButton_Click(object sender, EventArgs e)
+        {
+            if (FileUploadControl.HasFile)
+            {
+                try
+                {
+                    if (FileUploadControl.PostedFile.ContentType == "image/jpeg")
+                    {
+                        if (FileUploadControl.PostedFile.ContentLength < 102400)
+                        {
+                            string filename = Path.GetFileName(FileUploadControl.FileName);
+                            FileUploadControl.SaveAs(Server.MapPath("~/" + filename));
+                            StatusLabel.Text = "Upload status: File uploaded.";
+                        }
+                        else
+                            StatusLabel.Text = "Upload status: The file has to be less than 100 kb!";
+                    }
+                    else
+                        StatusLabel.Text = "Upload status: Only JPEG files are accepted!";
+                }
+                catch (Exception ex)
+                {
+                    StatusLabel.Text = "Upload status: File could not be" +
+                        "uploaded. The following error has occured: "
+                        + ex.Message;
+                }
             }
         }
     }
