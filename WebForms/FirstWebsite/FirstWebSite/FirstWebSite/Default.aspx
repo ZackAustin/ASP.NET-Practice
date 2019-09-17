@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" 
-    Inherits="FirstWebSite.Default" UICulture="fr" %>
+    Inherits="FirstWebSite.Default" UICulture="fr" Culture="en-US" %>
 <%@ Reference Control="~/UserInfoBoxControl.ascx" %>
 <%@ Register TagPrefix="My" TagName="EventUserControl"
     Src="~/EventUserControl.ascx" %>
@@ -10,7 +10,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>ViewState</title>
+    <title>CultureInfo Demo</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -135,6 +135,15 @@
                 meta:resourcekey="lblHelloWorld" />
             <br />  <br />
         </div>
+
+        <% Response.Write("Your currnet culture is: "
+                 + System.Globalization.CultureInfo.CurrentCulture.DisplayName);%>
+        <br />  <br />
+        <% Response.Write("Current date, in a culture specific format: "
+                 + DateTime.Now
+                 .ToString(System.Globalization.CultureInfo.GetCultureInfo("de-DE")
+                 .DateTimeFormat)); %>
+
     </form>
 </body>
 </html>
