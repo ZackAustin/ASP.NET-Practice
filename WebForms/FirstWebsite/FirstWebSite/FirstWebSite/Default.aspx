@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" 
-    Inherits="FirstWebSite.Default" %>
+    Inherits="FirstWebSite.Default" UICulture="fr" %>
 <%@ Reference Control="~/UserInfoBoxControl.ascx" %>
 <%@ Register TagPrefix="My" TagName="EventUserControl"
     Src="~/EventUserControl.ascx" %>
@@ -126,6 +126,14 @@
                 onclick="UploadButton_Click" />
             <br />  <br />
             <asp:Label runat="server" ID="StatusLabel" Text="Upload status:" />
+        </div>
+
+        <div id="div7" runat="server">
+            <br />  <br />
+            <asp:Label runat="server" ID="lblHelloWorld"
+                Text="Hello, World!"
+                meta:resourcekey="lblHelloWorld" />
+            <br />  <br />
         </div>
     </form>
 </body>
