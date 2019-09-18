@@ -8,6 +8,8 @@ using System.Collections;
 using System.Net.Mail;
 using System.Net;
 using System.IO;
+using System.Globalization;
+using System.Threading;
 
 namespace FirstWebSite
 {
@@ -16,6 +18,8 @@ namespace FirstWebSite
         protected void Page_Load(object sender, EventArgs e)
         {
             HelloWorldLabel.Text = "Hello, World";
+
+            // Caching
 
             ArrayList datestamps;
 
@@ -44,6 +48,7 @@ namespace FirstWebSite
             foreach (DateTime dt in datestamps)
                 Response.Write(dt.ToString() + "<br />");
 
+            // State
             
             if (Session["BackgroundColor"] != null && !this.IsPostBack)
             {
@@ -59,6 +64,29 @@ namespace FirstWebSite
             {
                 NameLabel.Text = "Not set yet...";
             }
+
+            // Localization
+
+            var currentUICulture = Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
+
+            if (currentUICulture.Equals("en", StringComparison.OrdinalIgnoreCase))
+            {
+                // Direct Access
+                lblHelloWorldGlobal.Text = Resources.MyGlobalResources.HelloWorldLabel_Text;
+            }
+            else if (currentUICulture.Equals("de", StringComparison.OrdinalIgnoreCase))
+            {
+                // Local Resource Object
+                lblHelloWorldGlobal.Text = GetLocalResourceObject("lblHelloWorld.Text").ToString();
+            }
+            else if (currentUICulture.Equals("es", StringComparison.OrdinalIgnoreCase))
+            {
+                // Global Resource Object
+                lblHelloWorldGlobal.Text =
+                    GetGlobalResourceObject("MyGlobalResources_es", "HelloWorldLabel.Text").ToString();
+            }
+            else // default to en
+                lblHelloWorldGlobal.Text = Resources.MyGlobalResources.HelloWorldLabel_Text;
         }
 
         protected void GreetButton_Click(object sender, EventArgs e)

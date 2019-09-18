@@ -158,6 +158,21 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_GlobalResources\MyGlobalResources_de.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyGlobalResources_de.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\MyGlobalResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyGlobalResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\MyGlobalResources_es.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyGlobalResources_es.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Default.aspx.cs">
@@ -209,6 +224,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_LocalResources\Default.aspx.es.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\MyGlobalResources.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MyGlobalResources.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\MyGlobalResources_de.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MyGlobalResources_de.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\MyGlobalResources_es.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MyGlobalResources_es.designer.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -22,8 +22,9 @@
                 methodName="GetFreshDateTime" />
         </div>
         <div id="div1">
+            <br />  <br />
             <asp:Label runat="server" id="HelloWorldLabel"></asp:Label>
-            <br /><br />
+            <br />  <br />
             <asp:TextBox runat="server" ID="TextInput" />
             <asp:Button runat="server" ID="GreetButton" Text="Say Hello!" OnClick="GreetButton_Click" />
             <asp:DropDownList runat="server" ID="GreetList" AutoPostBack="true" OnSelectedIndexChanged="GreetList_SelectedIndexChanged">
@@ -31,13 +32,13 @@
                 <asp:ListItem Value="World">World</asp:ListItem>
                 <asp:ListItem Value="Universe">Universe</asp:ListItem>
             </asp:DropDownList>
-            <br /><br />
+            <br />  <br />
 
             <asp:PlaceHolder runat="server" ID="phUserInfoBox" />
 
             <My:EventUserControl runat="server" ID="MyEventUserControl"  
                 OnPageTitleUpdated="MyEventUserControl_PageTitleUpdated" />
-            <br /><br />
+            <br />  <br />
         </div>
         <div id="div2">
             Your name: <br />
@@ -46,7 +47,7 @@
                 ControlToValidate="txtName" 
                 ErrorMessage="Please enter your name!" 
                 EnableClientScript="false" />
-            <br /><br />
+            <br />  <br />
             <asp:Button runat="server" ID="btnSubmitForm" Text="Ok" 
                 OnClick="btnSubmitForm_Click"/>
             <br />
@@ -61,7 +62,7 @@
                 controltovalidate="txtSmallNumber" ControlToCompare="txtBigNumber"
                 operator="LessThan" Type="Integer"
                 errorMessage="First number should be smaller than the second." />
-            <br /><br />
+            <br />  <br />
 
             Date:<br />
             <asp:TextBox runat="server" ID="txtDate" />
@@ -69,7 +70,7 @@
                 controltovalidate="txtDate" Type="Date"
                 minimumvalue="01-01-2006" MaximumValue="12-31-2006"
                 errormessage="Enter a valid date for 2006." />
-            <br /><br />
+            <br />  <br />
 
             4 digit number: <br />
             <asp:TextBox runat="server" ID="txtNumberVal" />
@@ -77,7 +78,7 @@
                 controltovalidate="txtNumberVal"
                 validationexpression="^[0-9]{4}$"
                 errormessage="Enter a 4 digit number." />
-            <br /><br />
+            <br />  <br />
 
             Custom text: <br />
             <asp:TextBox runat="server" ID="txtCustom" />
@@ -86,7 +87,7 @@
                 onservervalidate="lenCustom_ServerValidate" 
                 ValidateEmptyText="true"
                 errormessage="Text must be 8 characters long."  />
-            <br /><br />
+            <br />  <br />
         </div>
         <div id="div3" runat="server">
             <asp:DropDownList runat="server" ID="ColorSelector"
@@ -99,7 +100,7 @@
                     <asp:ListItem Value="Green">Green</asp:ListItem>
                     <asp:ListItem Value="Blue">Blue</asp:ListItem>
             </asp:DropDownList>
-            <br /><br />
+            <br />  <br />
         </div>
 
         <div id="div4" runat="server">
@@ -107,7 +108,7 @@
             <asp:Button runat="server" ID="SubmitForm" OnClick="SubmitForm_Click"
                 text="Submits & sets name "/>
             <asp:Button runat="server" ID="RefreshPage" Text="Just a postback" />
-            <br /><br />
+            <br />  <br />
             Name retrieved from ViewState: <asp:Label runat="server"
                 id="NameLabel" />
         </div>
@@ -151,6 +152,9 @@
                 Text="<%$ Resources:lblHelloWorld.Text %>"
                 Font-Names="Verdana"
                 ForeColor="<%$ Resources:lblHelloWorld.ForeColor %>" />
+            <br />  <br />
+
+            <asp:Label runat="server" ID="lblHelloWorldGlobal" />
             <br />  <br />
         </div>
     </form>
