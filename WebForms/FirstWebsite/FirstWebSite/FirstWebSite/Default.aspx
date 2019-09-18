@@ -132,7 +132,8 @@
             <br />  <br />
             <asp:Label runat="server" ID="lblHelloWorld"
                 Text="Hello, World!"
-                meta:resourcekey="lblHelloWorld" />
+                meta:resourcekey="lblHelloWorld"
+                Font-Names="Verdana" ForeColor="Blue"/>
             <br />  <br />
         </div>
 
@@ -144,6 +145,14 @@
                  .ToString(System.Globalization.CultureInfo.GetCultureInfo("de-DE")
                  .DateTimeFormat)); %>
 
+        <div id="div8" runat="server">
+            <br />  <br />
+            <asp:Label runat="server" ID="lblHelloWorld2"
+                Text="<%$ Resources:lblHelloWorld.Text %>"
+                Font-Names="Verdana"
+                ForeColor="<%$ Resources:lblHelloWorld.ForeColor %>" />
+            <br />  <br />
+        </div>
     </form>
 </body>
 </html>
