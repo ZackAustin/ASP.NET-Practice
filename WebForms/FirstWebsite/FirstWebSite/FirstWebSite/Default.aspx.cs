@@ -90,6 +90,8 @@ namespace FirstWebSite
             else // default to en
                 lblHelloWorldGlobal.Text = Resources.MyGlobalResources.HelloWorldLabel_Text;
 
+            // MySQL
+
             try
             {
                 using (OdbcConnection connection =
@@ -97,11 +99,11 @@ namespace FirstWebSite
                 {
                     connection.Open();
                     using (OdbcCommand command =
-                        new OdbcCommand("SELECT name FROM test_users", connection))
+                        new OdbcCommand("SELECT id, name FROM test_users", connection))
                     using (OdbcDataReader dr = command.ExecuteReader())
                     {
-                        while (dr.Read())
-                            Response.Write(dr["name"].ToString() + "<br />");
+                        ddlUsers.DataSource = dr;
+                        ddlUsers.DataBind();
                         dr.Close();
                     }
                     connection.Close();

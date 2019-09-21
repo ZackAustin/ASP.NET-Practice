@@ -157,6 +157,11 @@
             <asp:Label runat="server" ID="lblHelloWorldGlobal" />
             <br />  <br />
         </div>
+
+        <div>
+            <asp:DropDownList runat="server" ID="ddlUsers" DataValueField="id"
+                datatextfield="name" />
+        </div>
     </form>
 </body>
 </html>
