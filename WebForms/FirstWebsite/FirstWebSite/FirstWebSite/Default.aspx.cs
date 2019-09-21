@@ -10,6 +10,8 @@ using System.Net;
 using System.IO;
 using System.Globalization;
 using System.Threading;
+using System.Data.Odbc;
+using System.Configuration;
 
 namespace FirstWebSite
 {
@@ -87,6 +89,28 @@ namespace FirstWebSite
             }
             else // default to en
                 lblHelloWorldGlobal.Text = Resources.MyGlobalResources.HelloWorldLabel_Text;
+
+            try
+            {
+                using (OdbcConnection connection =
+                    new OdbcConnection(ConfigurationManager.ConnectionStrings["MySQLConnStr"].ConnectionString))
+                {
+                    connection.Open();
+                    using (OdbcCommand command =
+                        new OdbcCommand("SELECT name FROM test_users", connection))
+                    using (OdbcDataReader dr = command.ExecuteReader())
+                    {
+                        while (dr.Read())
+                            Response.Write(dr["name"].ToString() + "<br />");
+                        dr.Close();
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("An error occured:" + ex.Message);
+            }
         }
 
         protected void GreetButton_Click(object sender, EventArgs e)
