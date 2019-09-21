@@ -158,9 +158,10 @@
             <br />  <br />
         </div>
 
-        <div>
+        <div id="div9" runat="server">
             <asp:DropDownList runat="server" ID="ddlUsers" DataValueField="id"
                 datatextfield="name" />
+            <br />  <br />
         </div>
     </form>
 </body>
