@@ -58,15 +58,21 @@ namespace FirstWebSite
             else
                 datestamps = (ArrayList)Cache["datestamps"];
 
-            foreach (DateTime dt in datestamps)
-                Response.Write(dt.ToString() + "<br />");
+            // To work with update panel postback.
+
+            if(!IsPostBack)
+            {
+                foreach (DateTime dt in datestamps)
+                    Response.Write(dt.ToString() + "<br />");
+            }
+            
 
             // State
             
             if (Session["BackgroundColor"] != null && !this.IsPostBack)
             {
                 ColorSelector.SelectedValue = Session["BackgroundColor"].ToString();
-                div3.Style["background-color"] = ColorSelector.SelectedValue;
+                div5Sessions.Style["background-color"] = ColorSelector.SelectedValue;
             }
             
             if (ViewState["NameOfUser"] != null)
@@ -137,6 +143,12 @@ namespace FirstWebSite
         {
             HelloWorldLabel.Text = "Hello, " + GreetList.SelectedValue;
         }
+        protected void btnHelloWorld_Click(object sender, EventArgs e)
+        {
+            lblHelloAJAXWorld.Text = "Hello, world - this is a fresh message from "
+                + "ASP.NET AJAX! The time right now is: "
+                + DateTime.Now.ToLongTimeString();
+        }
 
         protected void MyEventUserControl_PageTitleUpdated(object sender, EventArgs e)
         {
@@ -166,7 +178,7 @@ namespace FirstWebSite
 
         protected void ColorSelector_SelectedIndexChanged(object sender, EventArgs e)
         {
-            div3.Style["background-color"] = ColorSelector.SelectedValue;
+            div5Sessions.Style["background-color"] = ColorSelector.SelectedValue;
             Session["BackgroundColor"] = ColorSelector.SelectedValue;
         }
 

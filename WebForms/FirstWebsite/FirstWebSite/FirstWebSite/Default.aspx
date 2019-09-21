@@ -10,18 +10,19 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>MySQL Demo</title>
+    <title>Hello, AJAX world!</title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div id="div0">
+        <div id="div0CacheDateStamps">
             Cached datestamp:<br />
             <%= DateTime.Now.ToString() %> <br />
             Fresh datestamp:<br />
             <asp:Substitution runat="server" ID="UnCachedArea"
                 methodName="GetFreshDateTime" />
         </div>
-        <div id="div1">
+
+        <div id="div1HelloWorld" runat="server">
             <br />  <br />
             <asp:Label runat="server" id="HelloWorldLabel"></asp:Label>
             <br />  <br />
@@ -33,14 +34,33 @@
                 <asp:ListItem Value="Universe">Universe</asp:ListItem>
             </asp:DropDownList>
             <br />  <br />
+        </div>
 
+        <div id="div2HelloAJAXWorld" runat="server">
+            <br />  <br />
+            <asp:ScriptManager ID="MainScriptManager" runat="server"/>
+            <asp:UpdatePanel ID="pnlHelloWorld" runat="server">
+                <ContentTemplate>
+                    <asp:Label runat="server" ID="lblHelloAJAXWorld" 
+                        Text="Click the button!" />
+                    <br />  <br />
+                    <asp:Button runat="server" ID="btnHelloWorld"
+                        onclick="btnHelloWorld_Click"
+                        Text="Update label" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <br />  <br />
+        </div>
+
+        <div id="div3EventUserControl">
             <asp:PlaceHolder runat="server" ID="phUserInfoBox" />
 
             <My:EventUserControl runat="server" ID="MyEventUserControl"  
                 OnPageTitleUpdated="MyEventUserControl_PageTitleUpdated" />
             <br />  <br />
         </div>
-        <div id="div2">
+
+        <div id="div4Validators">
             Your name: <br />
             <asp:TextBox runat="server" ID="txtName" />
             <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator1" 
@@ -89,7 +109,8 @@
                 errormessage="Text must be 8 characters long."  />
             <br />  <br />
         </div>
-        <div id="div3" runat="server">
+
+        <div id="div5Sessions" runat="server">
             <asp:DropDownList runat="server" ID="ColorSelector"
                 AutoPostBack="true" 
                 OnSelectedIndexChanged="ColorSelector_SelectedIndexChanged">
@@ -103,7 +124,7 @@
             <br />  <br />
         </div>
 
-        <div id="div4" runat="server">
+        <div id="div6ViewStates" runat="server">
             <asp:TextBox runat="server" ID="NameField" />
             <asp:Button runat="server" ID="SubmitForm" OnClick="SubmitForm_Click"
                 text="Submits & sets name "/>
@@ -113,14 +134,14 @@
                 id="NameLabel" />
         </div>
 
-        <div id="div5" runat="server">
+        <div id="div7Email" runat="server">
             <br /> <br />
             <asp:Button runat="server" ID="MailButton"
                 OnClick="MailButton_Click"
                 text="Send a test email." />
         </div>
 
-        <div id="div6" runat="server">
+        <div id="div8Files" runat="server">
             <br />  <br />
             <asp:FileUpload ID="FileUploadControl" runat="server" />
             <asp:Button runat="server" ID="UploadButton" Text="Upload"
@@ -129,7 +150,7 @@
             <asp:Label runat="server" ID="StatusLabel" Text="Upload status:" />
         </div>
 
-        <div id="div7" runat="server">
+        <div id="div9Localization" runat="server">
             <br />  <br />
             <asp:Label runat="server" ID="lblHelloWorld"
                 Text="Hello, World!"
@@ -146,7 +167,7 @@
                  .ToString(System.Globalization.CultureInfo.GetCultureInfo("de-DE")
                  .DateTimeFormat)); %>
 
-        <div id="div8" runat="server">
+        <div id="div10ExplicitResources" runat="server">
             <br />  <br />
             <asp:Label runat="server" ID="lblHelloWorld2"
                 Text="<%$ Resources:lblHelloWorld.Text %>"
@@ -158,7 +179,7 @@
             <br />  <br />
         </div>
 
-        <div id="div9" runat="server">
+        <div id="div11DatabaseAccess" runat="server">
             <asp:DropDownList runat="server" ID="ddlUsers" DataValueField="id"
                 datatextfield="name" />
             <br />  <br />

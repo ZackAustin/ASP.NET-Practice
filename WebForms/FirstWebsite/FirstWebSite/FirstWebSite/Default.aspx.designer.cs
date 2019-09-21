@@ -31,6 +31,15 @@ namespace FirstWebSite {
         protected global::System.Web.UI.WebControls.Substitution UnCachedArea;
         
         /// <summary>
+        /// div1HelloWorld control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div1HelloWorld;
+        
+        /// <summary>
         /// HelloWorldLabel control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,51 @@ namespace FirstWebSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList GreetList;
+        
+        /// <summary>
+        /// div2HelloAJAXWorld control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div2HelloAJAXWorld;
+        
+        /// <summary>
+        /// MainScriptManager control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager MainScriptManager;
+        
+        /// <summary>
+        /// pnlHelloWorld control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel pnlHelloWorld;
+        
+        /// <summary>
+        /// lblHelloAJAXWorld control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblHelloAJAXWorld;
+        
+        /// <summary>
+        /// btnHelloWorld control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnHelloWorld;
         
         /// <summary>
         /// phUserInfoBox control.
@@ -193,13 +247,13 @@ namespace FirstWebSite {
         protected global::System.Web.UI.WebControls.CustomValidator lenCustom;
         
         /// <summary>
-        /// div3 control.
+        /// div5Sessions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div3;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div5Sessions;
         
         /// <summary>
         /// ColorSelector control.
@@ -211,13 +265,13 @@ namespace FirstWebSite {
         protected global::System.Web.UI.WebControls.DropDownList ColorSelector;
         
         /// <summary>
-        /// div4 control.
+        /// div6ViewStates control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div4;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div6ViewStates;
         
         /// <summary>
         /// NameField control.
@@ -256,13 +310,13 @@ namespace FirstWebSite {
         protected global::System.Web.UI.WebControls.Label NameLabel;
         
         /// <summary>
-        /// div5 control.
+        /// div7Email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div5;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div7Email;
         
         /// <summary>
         /// MailButton control.
@@ -274,13 +328,13 @@ namespace FirstWebSite {
         protected global::System.Web.UI.WebControls.Button MailButton;
         
         /// <summary>
-        /// div6 control.
+        /// div8Files control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div6;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div8Files;
         
         /// <summary>
         /// FileUploadControl control.
@@ -310,13 +364,13 @@ namespace FirstWebSite {
         protected global::System.Web.UI.WebControls.Label StatusLabel;
         
         /// <summary>
-        /// div7 control.
+        /// div9Localization control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div7;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div9Localization;
         
         /// <summary>
         /// lblHelloWorld control.
@@ -328,13 +382,13 @@ namespace FirstWebSite {
         protected global::System.Web.UI.WebControls.Label lblHelloWorld;
         
         /// <summary>
-        /// div8 control.
+        /// div10ExplicitResources control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div8;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div10ExplicitResources;
         
         /// <summary>
         /// lblHelloWorld2 control.
@@ -355,13 +409,13 @@ namespace FirstWebSite {
         protected global::System.Web.UI.WebControls.Label lblHelloWorldGlobal;
         
         /// <summary>
-        /// div9 control.
+        /// div11DatabaseAccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div9;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div11DatabaseAccess;
         
         /// <summary>
         /// ddlUsers control.
