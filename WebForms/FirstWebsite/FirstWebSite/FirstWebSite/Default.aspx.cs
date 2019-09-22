@@ -72,7 +72,7 @@ namespace FirstWebSite
             if (Session["BackgroundColor"] != null && !this.IsPostBack)
             {
                 ColorSelector.SelectedValue = Session["BackgroundColor"].ToString();
-                div5Sessions.Style["background-color"] = ColorSelector.SelectedValue;
+                div_Sessions.Style["background-color"] = ColorSelector.SelectedValue;
             }
             
             if (ViewState["NameOfUser"] != null)
@@ -178,7 +178,7 @@ namespace FirstWebSite
 
         protected void ColorSelector_SelectedIndexChanged(object sender, EventArgs e)
         {
-            div5Sessions.Style["background-color"] = ColorSelector.SelectedValue;
+            div_Sessions.Style["background-color"] = ColorSelector.SelectedValue;
             Session["BackgroundColor"] = ColorSelector.SelectedValue;
         }
 
@@ -244,6 +244,12 @@ namespace FirstWebSite
                         + ex.Message;
                 }
             }
+        }
+
+        protected void UpdateButton_Click(object sender, EventArgs e)
+        {
+            DateTimeLabel1.Text = DateTime.Now.ToString();
+            DateTimeLabel2.Text = DateTime.Now.ToString();
         }
     }
 }

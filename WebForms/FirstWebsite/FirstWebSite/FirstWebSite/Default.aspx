@@ -14,7 +14,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div id="div0CacheDateStamps">
+        <asp:ScriptManager ID="MainScriptManager" runat="server"/>
+        <div id="div_CacheDateStamps">
             Cached datestamp:<br />
             <%= DateTime.Now.ToString() %> <br />
             Fresh datestamp:<br />
@@ -22,7 +23,7 @@
                 methodName="GetFreshDateTime" />
         </div>
 
-        <div id="div1HelloWorld" runat="server">
+        <div id="div_HelloWorld" runat="server">
             <br />  <br />
             <asp:Label runat="server" id="HelloWorldLabel"></asp:Label>
             <br />  <br />
@@ -36,9 +37,8 @@
             <br />  <br />
         </div>
 
-        <div id="div2HelloAJAXWorld" runat="server">
+        <div id="div_HelloAJAXWorld" runat="server">
             <br />  <br />
-            <asp:ScriptManager ID="MainScriptManager" runat="server"/>
             <asp:UpdatePanel ID="pnlHelloWorld" runat="server">
                 <ContentTemplate>
                     <asp:Label runat="server" ID="lblHelloAJAXWorld" 
@@ -52,7 +52,25 @@
             <br />  <br />
         </div>
 
-        <div id="div3EventUserControl">
+        <div id="div_UpdatePanel" runat="server">
+            <asp:UpdatePanel runat="server" id="UpdatePanel" updatemode="Conditional">
+            <Triggers>
+                <asp:AsyncPostBackTrigger controlid="UpdateButton2" eventname="Click" />
+            </Triggers>
+                <ContentTemplate>
+                    <asp:Label runat="server" id="DateTimeLabel1" />
+                    <asp:Button runat="server" id="UpdateButton1" onclick="UpdateButton_Click" text="Update" />               
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <asp:UpdatePanel runat="server" id="UpdatePanel1" updatemode="Conditional">           
+                <ContentTemplate>
+                    <asp:Label runat="server" id="DateTimeLabel2" />
+                    <asp:Button runat="server" id="UpdateButton2" onclick="UpdateButton_Click" text="Update" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+
+        <div id="div_EventUserControl">
             <asp:PlaceHolder runat="server" ID="phUserInfoBox" />
 
             <My:EventUserControl runat="server" ID="MyEventUserControl"  
@@ -60,7 +78,7 @@
             <br />  <br />
         </div>
 
-        <div id="div4Validators">
+        <div id="div_Validators">
             Your name: <br />
             <asp:TextBox runat="server" ID="txtName" />
             <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator1" 
@@ -110,7 +128,7 @@
             <br />  <br />
         </div>
 
-        <div id="div5Sessions" runat="server">
+        <div id="div_Sessions" runat="server">
             <asp:DropDownList runat="server" ID="ColorSelector"
                 AutoPostBack="true" 
                 OnSelectedIndexChanged="ColorSelector_SelectedIndexChanged">
@@ -124,7 +142,7 @@
             <br />  <br />
         </div>
 
-        <div id="div6ViewStates" runat="server">
+        <div id="div_ViewStates" runat="server">
             <asp:TextBox runat="server" ID="NameField" />
             <asp:Button runat="server" ID="SubmitForm" OnClick="SubmitForm_Click"
                 text="Submits & sets name "/>
@@ -134,14 +152,14 @@
                 id="NameLabel" />
         </div>
 
-        <div id="div7Email" runat="server">
+        <div id="div_Email" runat="server">
             <br /> <br />
             <asp:Button runat="server" ID="MailButton"
                 OnClick="MailButton_Click"
                 text="Send a test email." />
         </div>
 
-        <div id="div8Files" runat="server">
+        <div id="div_Files" runat="server">
             <br />  <br />
             <asp:FileUpload ID="FileUploadControl" runat="server" />
             <asp:Button runat="server" ID="UploadButton" Text="Upload"
@@ -150,7 +168,7 @@
             <asp:Label runat="server" ID="StatusLabel" Text="Upload status:" />
         </div>
 
-        <div id="div9Localization" runat="server">
+        <div id="div_Localization" runat="server">
             <br />  <br />
             <asp:Label runat="server" ID="lblHelloWorld"
                 Text="Hello, World!"
@@ -167,7 +185,7 @@
                  .ToString(System.Globalization.CultureInfo.GetCultureInfo("de-DE")
                  .DateTimeFormat)); %>
 
-        <div id="div10ExplicitResources" runat="server">
+        <div id="div_ExplicitResources" runat="server">
             <br />  <br />
             <asp:Label runat="server" ID="lblHelloWorld2"
                 Text="<%$ Resources:lblHelloWorld.Text %>"
@@ -179,7 +197,7 @@
             <br />  <br />
         </div>
 
-        <div id="div11DatabaseAccess" runat="server">
+        <div id="div_DatabaseAccess" runat="server">
             <asp:DropDownList runat="server" ID="ddlUsers" DataValueField="id"
                 datatextfield="name" />
             <br />  <br />
