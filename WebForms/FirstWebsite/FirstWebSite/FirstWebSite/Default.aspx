@@ -256,6 +256,47 @@
                 datatextfield="name" />
             <br />  <br />
         </div>
+
+        <div id="div_TreeViewDemo" runat="server">
+            <asp:UpdatePanel ID="treeViewDemoUpdater" runat="server">
+                <ContentTemplate>
+                    <br />  <br />
+                    <asp:TreeView runat="server" ID="treeViewDemo" ImageSet="Arrows"
+                        OnSelectedNodeChanged="treeViewDemo_SelectedNodeChanged">
+                        <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
+                        <Nodes>
+                            <asp:TreeNode Text="Science Club" Value="Science Club">
+                                <asp:TreeNode Text="Picture Gallery" Value="Picture Gallery"></asp:TreeNode>
+                                <asp:TreeNode Text="Home" Value="Home">
+                                    <asp:TreeNode Text="History" Value="History"></asp:TreeNode>
+                                    <asp:TreeNode Text="About Us" Value="About Us"></asp:TreeNode>
+                                    <asp:TreeNode Text="Contact Us" Value="Contact Us"></asp:TreeNode>
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="Products" Value="Products"></asp:TreeNode>
+                                <asp:TreeNode Text="Research" Value="Research"></asp:TreeNode>
+                                <asp:TreeNode Text="Board Members" Value="Board Members">
+                                    <asp:TreeNode Text="Qwerty Uiops" Value="Qwerty Uiops"></asp:TreeNode>
+                                    <asp:TreeNode Text="Zack Austin" Value="Zack Austin"></asp:TreeNode>
+                                </asp:TreeNode>
+                            </asp:TreeNode>
+                        </Nodes>
+                        <NodeStyle Font-Names="Verdana" Font-Size="8pt" ForeColor="Black"
+                            HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" />
+                        <ParentNodeStyle Font-Bold="False" />
+                        <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD"
+                            HorizontalPadding="0px" VerticalPadding="0px" />
+                    </asp:TreeView>
+                    <br />  <br />
+                    <asp:Label ID="treeViewDemoLabel" runat="server" Text="..." />
+                    <br />  <br />
+                    <asp:TextBox ID="treeViewDemoTextbox" runat="server" 
+                        TextMode="MultiLine" Height="100px" Text="..." ReadOnly="true">
+                    </asp:TextBox>
+                    <br />  <br />
+                    <br />  <br />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
     </form>
 </body>
 </html>

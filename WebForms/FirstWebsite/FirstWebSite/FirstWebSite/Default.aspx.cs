@@ -268,6 +268,15 @@ namespace FirstWebSite
                 lblSelectedColor.Text = color;
                 lblSelectedColor.BackColor = System.Drawing.Color.FromName(color);
             }
+
+            string treeNode = e.State["SelectedTreeNode"];
+
+            if (!String.IsNullOrEmpty(treeNode))
+            {
+                treeViewDemoLabel.Text = treeNode;
+                string treeNodeChildren = e.State["SelectedTreeNodeChildren"];
+                treeViewDemoTextbox.Text = treeNodeChildren;
+            }
         }
 
         protected void UpdateProgressButton_Click(object sender, EventArgs e)
@@ -278,6 +287,29 @@ namespace FirstWebSite
         protected void UpdateTimer_Tick(object sender, EventArgs e)
         {
             DateStampLabel.Text = DateTime.Now.ToString();
+        }
+
+        protected void treeViewDemo_SelectedNodeChanged(object sender, EventArgs e)
+        {
+            MainScriptManager.AddHistoryPoint("SelectedTreeNode", treeViewDemo.SelectedValue);
+
+            treeViewDemoTextbox.Text = "";
+
+            treeViewDemoLabel.Text = "Selected node changed to: "
+                + treeViewDemo.SelectedNode.Text;
+
+            TreeNodeCollection childNodes = treeViewDemo.SelectedNode.ChildNodes;
+
+            if (childNodes != null)
+            {
+                treeViewDemoTextbox.Text = "";
+
+                foreach (TreeNode tnode in childNodes)
+                    treeViewDemoTextbox.Text += tnode.Value + "\n";
+                MainScriptManager.AddHistoryPoint("SelectedTreeNodeChildren", treeViewDemoTextbox.Text);
+            }
+            else
+                MainScriptManager.AddHistoryPoint("SelectedTreeNodeChildren", "...");
         }
     }
 }
