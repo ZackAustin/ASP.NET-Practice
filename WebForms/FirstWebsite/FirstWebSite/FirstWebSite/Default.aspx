@@ -14,7 +14,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:ScriptManager ID="MainScriptManager" runat="server"/>
+        <asp:ScriptManager ID="MainScriptManager" runat="server" 
+            EnableHistory="true" 
+            OnNavigate="MainScriptManager_Navigate" 
+            EnableSecureHistoryState="false" />
         <div id="div_CacheDateStamps">
             Cached datestamp:<br />
             <%= DateTime.Now.ToString() %> <br />
@@ -53,6 +56,7 @@
         </div>
 
         <div id="div_UpdatePanel" runat="server">
+            <br />  <br />
             <asp:UpdatePanel runat="server" id="UpdatePanel" updatemode="Conditional">
             <Triggers>
                 <asp:AsyncPostBackTrigger controlid="UpdateButton2" eventname="Click" />
@@ -68,11 +72,30 @@
                     <asp:Button runat="server" id="UpdateButton2" onclick="UpdateButton_Click" text="Update" />
                 </ContentTemplate>
             </asp:UpdatePanel>
+            <br />  <br />
+        </div>
+
+        <div id="div_UpdatePanelHistory" runat="server">
+            <br />  <br />
+            <asp:UpdatePanel runat="server" ID="pnlColorSelect">
+            <ContentTemplate>
+                <asp:DropDownList runat="server" ID="ddlColor"
+                    AutoPostBack="true"
+                    OnSelectedIndexChanged="ddlColor_SelectedIndexChanged">
+                    <asp:ListItem Value="Red">Red</asp:ListItem>
+                    <asp:ListItem Value="Blue">Blue</asp:ListItem>
+                    <asp:ListItem Value="Green">Green</asp:ListItem>
+                </asp:DropDownList>
+                <br /><br />
+                Selected color: <asp:Label runat="server" ID="lblSelectedColor" />
+            </ContentTemplate>
+            </asp:UpdatePanel>
+            <br />  <br />
         </div>
 
         <div id="div_EventUserControl">
+            <br />  <br />
             <asp:PlaceHolder runat="server" ID="phUserInfoBox" />
-
             <My:EventUserControl runat="server" ID="MyEventUserControl"  
                 OnPageTitleUpdated="MyEventUserControl_PageTitleUpdated" />
             <br />  <br />

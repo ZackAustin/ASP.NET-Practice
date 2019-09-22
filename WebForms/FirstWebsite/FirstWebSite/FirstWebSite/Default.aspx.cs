@@ -251,6 +251,24 @@ namespace FirstWebSite
             DateTimeLabel1.Text = DateTime.Now.ToString();
             DateTimeLabel2.Text = DateTime.Now.ToString();
         }
+
+        protected void ddlColor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblSelectedColor.Text = ddlColor.SelectedValue;
+            lblSelectedColor.BackColor = System.Drawing.Color.FromName(ddlColor.SelectedValue);
+            MainScriptManager.AddHistoryPoint("SelectedColor", ddlColor.SelectedValue);
+        }
+
+        protected void MainScriptManager_Navigate(object sender, HistoryEventArgs e)
+        {
+            string color = e.State["SelectedColor"];
+
+            if (!String.IsNullOrEmpty(color))
+            {
+                lblSelectedColor.Text = color;
+                lblSelectedColor.BackColor = System.Drawing.Color.FromName(color);
+            }
+        }
     }
 }
 
