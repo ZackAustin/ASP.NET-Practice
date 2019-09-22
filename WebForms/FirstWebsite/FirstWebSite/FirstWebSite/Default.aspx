@@ -93,6 +93,23 @@
             <br />  <br />
         </div>
 
+        <div id="div_UpdateProgress" runat="server">
+            <br />  <br />
+            <asp:UpdateProgress runat="server" id="PageUpdateProgress" 
+                DynamicLayout="false" AssociatedUpdatePanelID="Panel" DisplayAfter="500" >
+            <ProgressTemplate>
+                Loading...
+            </ProgressTemplate>
+            </asp:UpdateProgress>
+            <asp:UpdatePanel runat="server" id="Panel">
+                <ContentTemplate>
+                    <asp:Button runat="server" id="UpdateProgressButton"
+                        onclick="UpdateProgressButton_Click" text="Update" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <br />  <br />
+        </div>
+
         <div id="div_EventUserControl">
             <br />  <br />
             <asp:PlaceHolder runat="server" ID="phUserInfoBox" />

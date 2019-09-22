@@ -269,6 +269,11 @@ namespace FirstWebSite
                 lblSelectedColor.BackColor = System.Drawing.Color.FromName(color);
             }
         }
+
+        protected void UpdateProgressButton_Click(object sender, EventArgs e)
+        {
+            System.Threading.Thread.Sleep(5000);
+        }
     }
 }
 

@@ -220,6 +220,42 @@ namespace FirstWebSite {
         protected global::System.Web.UI.WebControls.Label lblSelectedColor;
         
         /// <summary>
+        /// div_UpdateProgress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_UpdateProgress;
+        
+        /// <summary>
+        /// PageUpdateProgress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdateProgress PageUpdateProgress;
+        
+        /// <summary>
+        /// Panel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel Panel;
+        
+        /// <summary>
+        /// UpdateProgressButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button UpdateProgressButton;
+        
+        /// <summary>
         /// phUserInfoBox control.
         /// </summary>
         /// <remarks>
