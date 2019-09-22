@@ -274,6 +274,11 @@ namespace FirstWebSite
         {
             System.Threading.Thread.Sleep(5000);
         }
+
+        protected void UpdateTimer_Tick(object sender, EventArgs e)
+        {
+            DateStampLabel.Text = DateTime.Now.ToString();
+        }
     }
 }
 

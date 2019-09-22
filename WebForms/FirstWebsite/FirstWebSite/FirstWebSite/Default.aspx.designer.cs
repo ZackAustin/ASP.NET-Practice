@@ -256,6 +256,42 @@ namespace FirstWebSite {
         protected global::System.Web.UI.WebControls.Button UpdateProgressButton;
         
         /// <summary>
+        /// div_Timers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_Timers;
+        
+        /// <summary>
+        /// UpdateTimer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.Timer UpdateTimer;
+        
+        /// <summary>
+        /// TimedPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel TimedPanel;
+        
+        /// <summary>
+        /// DateStampLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label DateStampLabel;
+        
+        /// <summary>
         /// phUserInfoBox control.
         /// </summary>
         /// <remarks>

@@ -110,6 +110,20 @@
             <br />  <br />
         </div>
 
+        <div id="div_Timers" runat="server">
+            <br />  <br />
+            <asp:Timer runat="server" id="UpdateTimer" interval="5000" ontick="UpdateTimer_Tick" />
+            <asp:UpdatePanel runat="server" id="TimedPanel" updatemode="Conditional">
+                <Triggers>
+                    <asp:AsyncPostBackTrigger controlid="UpdateTimer" eventname="Tick" />
+                </Triggers>
+                <ContentTemplate>
+                    <asp:Label runat="server" id="DateStampLabel" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <br />  <br />
+        </div>
+
         <div id="div_EventUserControl">
             <br />  <br />
             <asp:PlaceHolder runat="server" ID="phUserInfoBox" />
