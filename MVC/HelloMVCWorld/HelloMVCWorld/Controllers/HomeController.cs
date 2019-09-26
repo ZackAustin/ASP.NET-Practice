@@ -13,7 +13,7 @@ namespace HelloMVCWorld.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return Content("Hello, MVC world!");
+            return View();
         }
     }
 }
