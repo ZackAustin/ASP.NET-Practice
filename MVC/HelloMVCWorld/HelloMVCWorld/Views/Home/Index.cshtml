@@ -1,6 +1,29 @@
-﻿@model HelloMVCWorld.Models.Movie
-@{
-    Layout = null;
+﻿@using HelloMVCWorld.Models
+@{ 
+    ViewData["Title"] = "TemplateDelegate";
+
+    Func<dynamic, object> movieTemplate = @<div>@item.Title [@item.ReleaseDate.ToShortDateString()]</div>;
+
+    List<Movie> movies = new List<Movie>()
+    {
+        (new Movie()
+        {
+            Title = "The Godfather",
+            ReleaseDate = new DateTime(1972, 3, 24)
+        }),
+
+        (new Movie()
+        {
+            Title = "Forest Gump",
+            ReleaseDate = new DateTime(1994, 7, 6)
+        }),
+
+        (new Movie()
+        {
+            Title = "Fight Club",
+            ReleaseDate = new DateTime(1999, 10, 15)
+        }),
+    };
 }
 
 <!DOCTYPE html>
@@ -12,7 +35,10 @@
 </head>
 <body>
 
-    The movie <b>@Model.Title</b> was released @Model.ReleaseDate.ToLongDateString()
+    @foreach(var movie in movies)
+    {
+        @movieTemplate(movie)
+    }
 
 </body>
 </html>
