@@ -28,6 +28,25 @@
     <br/><br/>
 }
 
+@*
+    Here's a Razor server-side comment.
+    It won't be rendered to the browser.
+    It can also span multiple lines.
+*@
+
+@{ 
+    @*
+        Here's a Razor server-side comment.
+    *@
+
+    // C# style single-line comment.
+
+    /*
+        C# style multi-line comment.
+        It can also span multiple lines.
+    */
+}
+
 <!DOCTYPE html>
 
 <html>
