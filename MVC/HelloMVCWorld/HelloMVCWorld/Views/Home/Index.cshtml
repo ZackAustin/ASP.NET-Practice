@@ -47,6 +47,16 @@
     */
 }
 
+@*
+    Looping data source..
+*@
+@{ 
+    List<string> names = new List<string>()
+    {
+        "John Doe", "Jane Doe", "Joe Doe", "Jenna Doe", "Judy Doe"
+    };
+}
+
 <!DOCTYPE html>
 
 <html>
@@ -90,6 +100,49 @@
     {
         <span>We're still waiting for the year of 2020...</span>
     }
+
+    @*
+      Various loop types.  
+    *@
+
+    <ul>
+        @for (int i = 0; i < names.Count; i++)
+        {
+            <li>@names[i]</li>
+            @if (i >= 2)
+            {
+                <li>...and so on</li>
+                break;
+            }
+        }
+    </ul>
+
+    <ul>
+        @foreach (var n in names)
+        {
+            <li>@n</li>
+        }
+    </ul>
+
+    <ul>
+        @{ 
+            int counter = 0;
+        }
+        @while (counter < names.Count)
+        {
+            <li>@names[counter++]</li>
+        }
+    </ul>
+
+    <ul>
+        @{ 
+            int counter2 = 0;
+        }
+        @do
+        {
+            <li>@names[counter2++]</li>
+        } while (counter2 < names.Count);
+    </ul>
 
 </body>
 </html>
