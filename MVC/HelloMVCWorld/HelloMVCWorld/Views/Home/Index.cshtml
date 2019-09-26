@@ -55,17 +55,32 @@
     <title>@Model.Title</title>
 </head>
 <body>
-    
+
     The movie <b>@Model.Title</b> was released @Model.ReleaseDate.ToLongDateString()
 
     <p>@helloWorld</p>
     <p>@Html.Raw(helloWorld)</p>
 
-    Hello, @(name.Substring(0,4)). Your age is: <b>@(37 + 5).</b>
+    Hello, @(name.Substring(0, 4)). Your age is: <b>@(37 + 5).</b>
 
     <h2>CodeBlocks</h2>
-    Text: <br/>
+    Text: <br />
     @Html.Raw(text)
+
+    @{
+        <br/><br/>
+        string helloWorldMsg = "Good day";
+        if (DateTime.Now.Hour > 17)
+        {
+            helloWorldMsg = "Good evening";
+        }
+        helloWorldMsg += ", world!";
+        helloWorldMsg = helloWorldMsg.ToUpper();
+    }
+
+    <div>
+        @helloWorldMsg
+    </div>
 
 </body>
 </html>
