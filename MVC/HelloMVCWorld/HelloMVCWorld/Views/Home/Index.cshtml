@@ -82,5 +82,14 @@
         @helloWorldMsg
     </div>
 
+    @if(DateTime.Now.Year >= 2020)
+    {
+        <span>The year @DateTime.Now.Year has finally arrived!</span>
+    }
+    else
+    {
+        <span>We're still waiting for the year of 2020...</span>
+    }
+
 </body>
 </html>
