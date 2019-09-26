@@ -1,4 +1,4 @@
-﻿
+﻿@model HelloMVCWorld.Models.Movie
 @{
     Layout = null;
 }
@@ -8,9 +8,11 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>@Model.Title</title>
 </head>
 <body>
-    <span style="font-size: 18pt;">Hello, <b>MVC</b> world!</span>
+    
+    The movie <b>@Model.Title</b> was released @Model.ReleaseDate.ToLongDateString()
+
 </body>
 </html>

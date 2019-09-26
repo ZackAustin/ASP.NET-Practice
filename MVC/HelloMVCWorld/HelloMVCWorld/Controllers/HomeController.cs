@@ -13,7 +13,13 @@ namespace HelloMVCWorld.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View();
+            Models.Movie movie = new Models.Movie()
+            {
+                Title = "The Godfather",
+                ReleaseDate = new DateTime(1972, 3, 24)
+            };
+
+            return View(movie);
         }
     }
 }
