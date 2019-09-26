@@ -1,6 +1,8 @@
 ﻿@model HelloMVCWorld.Models.Movie
 @{
     Layout = null;
+
+    var helloWorld = "<b>Hello, world!</b>";
 }
 
 <!DOCTYPE html>
@@ -13,6 +15,9 @@
 <body>
     
     The movie <b>@Model.Title</b> was released @Model.ReleaseDate.ToLongDateString()
+
+    <p>@helloWorld</p>
+    <p>@Html.Raw(helloWorld)</p>
 
 </body>
 </html>
