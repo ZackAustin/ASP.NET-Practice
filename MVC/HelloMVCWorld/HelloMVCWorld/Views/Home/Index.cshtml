@@ -35,7 +35,11 @@
 </head>
 <body>
 
-    @foreach(var movie in movies)
+    The movie brought in is <b>@Model.Title</b> which was released @Model.ReleaseDate.ToLongDateString()
+    
+    <br/> <br/>
+
+    @foreach (var movie in movies)
     {
         @movieTemplate(movie)
     }
