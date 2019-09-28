@@ -18,7 +18,9 @@ namespace HelloMVCWorld.Controllers
                 Title = "The Godfather",
                 ReleaseDate = new DateTime(1972, 3, 24)
             };
-            return View(movie);
+            //Until we get to routing.
+            return RedirectToAction("Details");
+            //return View(movie);
         }
 
         [HttpGet]
@@ -31,6 +33,16 @@ namespace HelloMVCWorld.Controllers
         public IActionResult Edit(Models.Movie movie)
         {
             return Content("Movie updated!");
+        }
+
+        public IActionResult Details(int id)
+        {
+            Models.Product product = new Models.Product()
+            {
+                Title = "Toiler Paper",
+                Price = 1.99
+            };
+            return View(product);
         }
     }
 }
