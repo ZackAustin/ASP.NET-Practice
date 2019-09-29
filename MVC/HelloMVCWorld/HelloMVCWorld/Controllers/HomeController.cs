@@ -37,12 +37,9 @@ namespace HelloMVCWorld.Controllers
 
         public IActionResult Details(int id)
         {
-            Models.Product product = new Models.Product()
-            {
-                Title = "Toiler Paper",
-                Price = 1.99
-            };
-            return View(product);
+            ViewData["ProductTitle"] = "Toiler Paper";
+            ViewBag.ProductPrice = 1.99;
+            return View();
         }
     }
 }

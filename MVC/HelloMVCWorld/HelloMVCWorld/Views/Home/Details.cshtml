@@ -1,6 +1,4 @@
-﻿@model HelloMVCWorld.Models.Product
-
-@{
+﻿@{
     Layout = null;
 }
 
@@ -12,7 +10,7 @@
     <title>Details</title>
 </head>
 <body>
-    <h1>@Model.Title.</h1>
-    Price: @Model.Price
+    <h1>@ViewData["ProductTitle"]</h1>
+    Price: @ViewBag.ProductPrice
 </body>
 </html>
