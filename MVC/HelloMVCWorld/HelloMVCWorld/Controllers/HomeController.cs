@@ -21,6 +21,8 @@ namespace HelloMVCWorld.Controllers
             //Until we get to routing.
             //return RedirectToAction("Details");
             //return RedirectToAction("ViewStartTest");
+            //return RedirectToAction("Products");
+            //return RedirectToAction("About");
             return View(movie);
         }
 
@@ -44,6 +46,16 @@ namespace HelloMVCWorld.Controllers
         }
 
         public IActionResult ViewStartTest()
+        {
+            return View();
+        }
+
+        public IActionResult Products()
+        {
+            return View();
+        }
+
+        public IActionResult About()
         {
             return View();
         }

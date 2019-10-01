@@ -12,6 +12,16 @@
 </head>
 <body>
     <div>Hello, Layouted World!</div>
+    
     @RenderBody()
+
+    <p>Lots of Layout content goes here...</p>
+    
+    @RenderSection("Footer", required: false)
+
+    @if(!IsSectionDefined("Footer"))
+    {
+        <span>Generic footer message!</span>
+    }
 </body>
 </html>
