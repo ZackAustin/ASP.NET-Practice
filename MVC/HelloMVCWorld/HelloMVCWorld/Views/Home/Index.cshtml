@@ -1,6 +1,6 @@
 ﻿@using HelloMVCWorld.Models
 @{ 
-    ViewData["Title"] = "TemplateDelegate";
+    ViewData["Title"] = "Index";
 
     Func<dynamic, object> movieTemplate = @<div>@item.Title [@item.ReleaseDate.ToShortDateString()]</div>;
 
@@ -35,9 +35,19 @@
 </head>
 <body>
 
+    <h2>Index</h2>
+
+    @for (int i = 0; i < 3; i++)
+    {
+        @await Html.PartialAsync("_Greeting", Model, new ViewDataDictionary(ViewData)
+        { { "index", i } });
+        <br/>
+    }
+
+    <br/>
     The movie brought in is <b>@Model.Title</b> which was released @Model.ReleaseDate.ToLongDateString()
-    
-    <br/> <br/>
+
+    <br /> <br />
 
     @foreach (var movie in movies)
     {

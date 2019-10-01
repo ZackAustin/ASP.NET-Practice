@@ -19,8 +19,8 @@ namespace HelloMVCWorld.Controllers
                 ReleaseDate = new DateTime(1972, 3, 24)
             };
             //Until we get to routing.
-            return RedirectToAction("Details");
-            //return View(movie);
+            //return RedirectToAction("Details");
+            return View(movie);
         }
 
         [HttpGet]
