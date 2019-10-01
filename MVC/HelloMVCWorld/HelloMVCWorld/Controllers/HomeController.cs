@@ -20,6 +20,7 @@ namespace HelloMVCWorld.Controllers
             };
             //Until we get to routing.
             //return RedirectToAction("Details");
+            //return RedirectToAction("ViewStartTest");
             return View(movie);
         }
 
@@ -39,6 +40,11 @@ namespace HelloMVCWorld.Controllers
         {
             ViewData["ProductTitle"] = "Toiler Paper";
             ViewBag.ProductPrice = 1.99;
+            return View();
+        }
+
+        public IActionResult ViewStartTest()
+        {
             return View();
         }
     }
